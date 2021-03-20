@@ -1,6 +1,8 @@
 # UmaFull
 ウマ娘をフルスクリーン化
 
+![画面イメージ](https://github.com/about518/UmaFull/blob/Images/ScreenImage.png)
+
 縦画面表示、横画面表示それぞれに位置とサイズを指定できます
 
 ## ダウンロード

@@ -7,7 +7,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="UmaFull"
     Width="640"
-    Height="380"
+    Height="360"
     ResizeMode="CanMinimize"
     StateChanged="Window_StateChanged"
     mc:Ignorable="d">
@@ -68,10 +68,10 @@
                             <TextBlock Text="上" TextAlignment="Center" />
                             <TextBlock Text="幅" TextAlignment="Center" />
                             <TextBlock Text="高さ" TextAlignment="Center" />
-                            <TextBox HorizontalContentAlignment="Right" Text="{Binding VerticalRect.X}" />
-                            <TextBox HorizontalContentAlignment="Right" Text="{Binding VerticalRect.Y}" />
-                            <TextBox HorizontalContentAlignment="Right" Text="{Binding VerticalRect.Width}" />
-                            <TextBox HorizontalContentAlignment="Right" Text="{Binding VerticalRect.Height}" />
+                            <TextBox HorizontalContentAlignment="Right" Text="{Binding VerticalRectX}" />
+                            <TextBox HorizontalContentAlignment="Right" Text="{Binding VerticalRectY}" />
+                            <TextBox HorizontalContentAlignment="Right" Text="{Binding VerticalRectWidth}" />
+                            <TextBox HorizontalContentAlignment="Right" Text="{Binding VerticalRectHeight}" />
                         </UniformGrid>
                         <Button
                             Margin="0,5"
@@ -98,10 +98,10 @@
                             <TextBlock Text="上" TextAlignment="Center" />
                             <TextBlock Text="幅" TextAlignment="Center" />
                             <TextBlock Text="高さ" TextAlignment="Center" />
-                            <TextBox HorizontalContentAlignment="Right" Text="{Binding HorizontalRect.X}" />
-                            <TextBox HorizontalContentAlignment="Right" Text="{Binding HorizontalRect.Y}" />
-                            <TextBox HorizontalContentAlignment="Right" Text="{Binding HorizontalRect.Width}" />
-                            <TextBox HorizontalContentAlignment="Right" Text="{Binding HorizontalRect.Height}" />
+                            <TextBox HorizontalContentAlignment="Right" Text="{Binding HorizontalRectX}" />
+                            <TextBox HorizontalContentAlignment="Right" Text="{Binding HorizontalRectY}" />
+                            <TextBox HorizontalContentAlignment="Right" Text="{Binding HorizontalRectWidth}" />
+                            <TextBox HorizontalContentAlignment="Right" Text="{Binding HorizontalRectHeight}" />
                         </UniformGrid>
                         <Button
                             Margin="0,5"

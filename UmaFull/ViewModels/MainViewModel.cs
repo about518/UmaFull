@@ -37,24 +37,148 @@ namespace UmaFull
             set => SetProperty(ref _selectedHorizontalMonitor, value);
         }
 
-        private Rectangle _verticalRect;
         /// <summary>
         /// 縦画面表示の表示座標
         /// </summary>
         public Rectangle VerticalRect
         {
-            get => _verticalRect;
-            set => SetProperty(ref _verticalRect, value);
+            get => new Rectangle(VerticalRectX, VerticalRectY, VerticalRectWidth, VerticalRectHeight);
+            set
+            {
+                VerticalRectX = value.X;
+                VerticalRectY = value.Y;
+                VerticalRectWidth = value.Width;
+                VerticalRectHeight = value.Height;
+                OnPropertyChanged();
+            }
         }
 
-        private Rectangle _horizontalRect;
+        private int _verticalRectX;
+        /// <summary>
+        /// 縦画面表示の表示座標X
+        /// </summary>
+        public int VerticalRectX
+        {
+            get => _verticalRectX;
+            set
+            {
+                SetProperty(ref _verticalRectX, value);
+                OnPropertyChanged("VerticalRect");
+            }
+        }
+
+        private int _verticalRectY;
+        /// <summary>
+        /// 縦画面表示の表示座標Y
+        /// </summary>
+        public int VerticalRectY
+        {
+            get => _verticalRectY;
+            set
+            {
+                SetProperty(ref _verticalRectY, value);
+                OnPropertyChanged("VerticalRect");
+            }
+        }
+
+        private int _verticalRectWidth;
+        /// <summary>
+        /// 縦画面表示の表示座標幅
+        /// </summary>
+        public int VerticalRectWidth
+        {
+            get => _verticalRectWidth;
+            set
+            {
+                SetProperty(ref _verticalRectWidth, value);
+                OnPropertyChanged("VerticalRect");
+            }
+        }
+
+        private int _verticalRectHeight;
+        /// <summary>
+        /// 縦画面表示の表示座標高さ
+        /// </summary>
+        public int VerticalRectHeight
+        {
+            get => _verticalRectHeight;
+            set
+            {
+                SetProperty(ref _verticalRectHeight, value);
+                OnPropertyChanged("VerticalRect");
+            }
+        }
+
         /// <summary>
         /// 横画面表示の表示座標
         /// </summary>
         public Rectangle HorizontalRect
         {
-            get => _horizontalRect;
-            set => SetProperty(ref _horizontalRect, value);
+            get => new Rectangle(HorizontalRectX, HorizontalRectY, HorizontalRectWidth, HorizontalRectHeight);
+            set
+            {
+                HorizontalRectX = value.X;
+                HorizontalRectY = value.Y;
+                HorizontalRectWidth = value.Width;
+                HorizontalRectHeight = value.Height;
+                OnPropertyChanged();
+            }
+        }
+
+        private int _horizontalRectX;
+        /// <summary>
+        /// 横画面表示の表示座標X
+        /// </summary>
+        public int HorizontalRectX
+        {
+            get => _horizontalRectX;
+            set
+            {
+                SetProperty(ref _horizontalRectX, value);
+                OnPropertyChanged("HorizontalRect");
+            }
+        }
+
+        private int _horizontalRectY;
+        /// <summary>
+        /// 横画面表示の表示座標Y
+        /// </summary>
+        public int HorizontalRectY
+        {
+            get => _horizontalRectY;
+            set
+            {
+                SetProperty(ref _horizontalRectY, value);
+                OnPropertyChanged("HorizontalRect");
+            }
+        }
+
+        private int _horizontalRectWidth;
+        /// <summary>
+        /// 横画面表示の表示座標幅
+        /// </summary>
+        public int HorizontalRectWidth
+        {
+            get => _horizontalRectWidth;
+            set
+            {
+                SetProperty(ref _horizontalRectWidth, value);
+                OnPropertyChanged("HorizontalRect");
+            }
+        }
+
+        private int _horizontalRectHeight;
+        /// <summary>
+        /// 横画面表示の表示座標高さ
+        /// </summary>
+        public int HorizontalRectHeight
+        {
+            get => _horizontalRectHeight;
+            set
+            {
+                SetProperty(ref _horizontalRectHeight, value);
+                OnPropertyChanged("HorizontalRect");
+            }
         }
 
         private ObservableCollection<WindowNames> _targetWindows;
@@ -178,10 +302,12 @@ namespace UmaFull
             {
                 if (e.PropertyName == nameof(VerticalRect))
                 {
+                    IsCheckedAutoSwitch = false;
                     MainModel.VerticalRect = VerticalRect;
                 }
                 else if (e.PropertyName == nameof(HorizontalRect))
                 {
+                    IsCheckedAutoSwitch = false;
                     MainModel.HorizontalRect = HorizontalRect;
                 }
                 else if (e.PropertyName == nameof(SelectedVerticalMonitor))
